@@ -120,8 +120,7 @@ const thoughtController = {
                 $pull: { reactions: { reactionId: req.params.reactionId } }
             },
             {
-                new: true,
-                runValidators: true
+                new: true
             }
         )
             .select("-__v")
