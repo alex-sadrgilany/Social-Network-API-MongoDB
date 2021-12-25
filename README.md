@@ -10,6 +10,8 @@ Below is the walkthrough video that will show the setup for the models, how to i
 
 Walkthrough Video:
 
+https://www.youtube.com/watch?v=K0vdlluBKP8
+
 
 ## Table of Contents
 
