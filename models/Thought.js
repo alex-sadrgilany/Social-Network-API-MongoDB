@@ -13,12 +13,12 @@ const ReactionSchema = new Schema(
         },
         reactionBody: {
             type: String,
-            required: true,
+            required: [true, "Your reaction cannot be blank!"],
             maxLength: 280
         },
         username: {
             type: String,
-            required: true
+            required: [true, "Please enter the username for this reaction!"]
         },
         createdAt: {
             type: Date,
@@ -37,7 +37,7 @@ const ThoughtSchema = new Schema(
     {
         thoughtText: {
             type: String,
-            required: true,
+            required: [true, "Your thought cannot be blank!"],
             minLength: 1,
             maxLength: 280
         },
@@ -48,7 +48,7 @@ const ThoughtSchema = new Schema(
         },
         username: {
             type: String,
-            required: true
+            required: [true, "Please enter the username for this thought!"]
         },
         reactions: [ReactionSchema]
     },

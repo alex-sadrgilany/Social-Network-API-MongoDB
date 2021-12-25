@@ -53,36 +53,3 @@ function formatDate(timestamp) {
 };
 
 module.exports = formatDate;
-
-// module.exports = (timestamp) => {
-//     const allMonths = {
-//         0: "Jan",
-//         1: "Feb",
-//         2: "Mar",
-//         3: "Apr",
-//         4: "May",
-//         5: "Jun",
-//         6: "Jul",
-//         7: "Aug",
-//         8: "Sep",
-//         9: "Oct",
-//         10: "Nov",
-//         11: "Dec"
-//     };
-
-//     const dateObject = new Date(timestamp);
-
-//     const month = allMonths[dateObject.getMonth()];
-
-//     const day = dateSuffix(dateObject.getDate());
-
-//     const year = dateObject.getFullYear();
-
-//     const hour = dateObject.getHours();
-
-//     const minutes = dateObject.getMinutes();
-
-//     const finalDate = `${month} ${day}, ${year} at ${hour}:${minutes}`;
-
-//     return finalDate;
-// };
