@@ -107,7 +107,6 @@ const thoughtController = {
                         $pull: { thoughts: req.params.thoughtId }
                     },
                     {
-                        new: true,
                         runValidators: true
                     }
                 );
