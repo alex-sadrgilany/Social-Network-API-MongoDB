@@ -4,6 +4,7 @@ const {
 } = require("../models");
 
 const thoughtController = {
+    // get all thoughts
     getAllThoughts(req, res) {
         Thought.find({})
             .populate({
@@ -18,6 +19,7 @@ const thoughtController = {
                 res.status(400).json(err);
             });
     },
+    // get a single thought by id
     getThoughtById(req, res) {
         Thought.findOne({
             _id: req.params.id
@@ -39,6 +41,7 @@ const thoughtController = {
                 res.status(400).json(err);
             });
     },
+    // post a new thought and attach it to a user
     createThought(req, res) {
         Thought.create(req.body)
             .then(({ _id }) => {
@@ -67,6 +70,7 @@ const thoughtController = {
                 res.status(400).json(err);
             });
     },
+    // update a thought's thoughtText or username fields
     updateThought(req, res) {
         Thought.findOneAndUpdate(
             {
@@ -90,6 +94,7 @@ const thoughtController = {
                 res.status(400).json(err);
             });
     },
+    // delete a single thought by id
     deleteThought(req, res) {
         Thought.findOneAndDelete({
             _id: req.params.id
@@ -117,6 +122,7 @@ const thoughtController = {
                 res.status(400).json(err);
             });
     },
+    // create a new subdocument reaction attached to a single thought
     addReaction(req, res) {
         Thought.findOneAndUpdate(
             {
@@ -142,6 +148,7 @@ const thoughtController = {
                 res.status(400).json(err);
             });
     },
+    // remove a reaction by reactionId field
     removeReaction(req, res) {
         Thought.findOneAndUpdate(
             {

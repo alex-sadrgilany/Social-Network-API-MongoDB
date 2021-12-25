@@ -1,4 +1,5 @@
 const router = require("express").Router();
+// importing all the mongoose api functions from the thought controller file
 const {
     getAllThoughts,
     getThoughtById,
@@ -9,6 +10,7 @@ const {
     removeReaction
 } = require("../../controllers/thought-controller");
 
+// setting up all the various routes with necessary params
 router.route("/")
     .get(getAllThoughts);
 

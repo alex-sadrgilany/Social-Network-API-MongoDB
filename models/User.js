@@ -3,6 +3,7 @@ const {
     model
 } = require("mongoose");
 
+// creating the user schema
 const UserSchema = new Schema(
     {
         username: {
@@ -39,6 +40,7 @@ const UserSchema = new Schema(
     }
 );
 
+// creating a virtual field that displays how many friends a user has in their friends list array
 UserSchema.virtual("friendCount").get(function () {
     return this.friends.length;
 });

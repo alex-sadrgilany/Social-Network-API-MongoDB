@@ -1,4 +1,5 @@
 const router = require("express").Router();
+// importing all the mongoose api functions from the user controller file
 const {
     getAllUsers,
     getUserById,
@@ -9,6 +10,7 @@ const {
     removeFriend
 } = require("../../controllers/user-controller");
 
+// setting up all the various routes with necessary params
 router.route("/")
     .get(getAllUsers)
     .post(createUser);

@@ -1,3 +1,4 @@
+// creating the suffix based on which digit is last in the date. i.e. 2 would be 2nd, 3 would be 3rd, etc.
 const dateSuffix = date => {
     let dateString = date.toString();
 
@@ -19,6 +20,7 @@ const dateSuffix = date => {
     return dateString;
 };
 
+// creating the getter function that takes in the javascript Date timestamp and converts it to something much more readable
 function formatDate(timestamp) {
     const allMonths = {
         0: "Jan",

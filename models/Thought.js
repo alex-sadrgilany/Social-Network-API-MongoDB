@@ -5,6 +5,7 @@ const {
 } = require("mongoose");
 const formatDate = require("../utils/formatDate");
 
+// creating the reactions subdocument schema
 const ReactionSchema = new Schema(
     {
         reactionId: {
@@ -23,6 +24,7 @@ const ReactionSchema = new Schema(
         createdAt: {
             type: Date,
             default: Date.now,
+            // utilizing a getter function to format the inherent Date output to something more readable
             get: createdAtVal => formatDate(createdAtVal)
         }
     },
@@ -33,6 +35,7 @@ const ReactionSchema = new Schema(
     }
 );
 
+// creating the thought schema
 const ThoughtSchema = new Schema(
     {
         thoughtText: {
@@ -44,6 +47,7 @@ const ThoughtSchema = new Schema(
         createdAt: {
             type: Date,
             default: Date.now,
+            // utilizing a getter function to format the inherent Date output to something more readable
             get: createdAtVal => formatDate(createdAtVal)
         },
         username: {
@@ -61,6 +65,7 @@ const ThoughtSchema = new Schema(
     }
 )
 
+// creating a virtual field that displays how many reactions each thought has
 ThoughtSchema.virtual("reactionCount").get(function () {
     return this.reactions.length;
 });

@@ -4,6 +4,7 @@ const {
 } = require("../models");
 
 const userController = {
+    // get all users
     getAllUsers(req, res) {
         User.find({})
             .populate({
@@ -22,6 +23,7 @@ const userController = {
                 res.status(400).json(err);
             });
     },
+    // get a single user by id
     getUserById(req, res) {
         User.findOne({
             _id: req.params.id
@@ -47,6 +49,7 @@ const userController = {
                 res.status(400).json(err);
             });
     },
+    // create a new user
     createUser(req, res) {
         User.create(req.body)
             .then(dbUserData => res.json(dbUserData))
@@ -55,6 +58,7 @@ const userController = {
                 res.status(400).json(err);
             });
     },
+    // update an existing user's username or email fields
     updateUser(req, res) {
         User.findOneAndUpdate(
             {
@@ -77,6 +81,7 @@ const userController = {
                     res.status(400).json(err);
                 });
     },
+    // delete a single user by id
     deleteUser(req, res) {
         User.findOneAndDelete({
             _id: req.params.id
@@ -118,6 +123,7 @@ const userController = {
                 res.status(400).json(err);
             });
     },
+    // creates a relationship between two users and add one to another's 'friend list'
     addFriend(req, res) {
         User.findOneAndUpdate(
             {
@@ -144,6 +150,7 @@ const userController = {
                 res.status(400).json(err);
             });
     },
+    // deletes a user from another user's friend list
     removeFriend(req, res) {
         User.findOneAndUpdate(
             {
